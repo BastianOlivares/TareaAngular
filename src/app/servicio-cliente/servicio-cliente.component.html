@@ -1,0 +1,44 @@
+<form class="container" [formGroup]="formulario" (ngSubmit)="validaDatos()" novalidate>
+    <ul>
+        <li>
+            <label >Nombre completo: </label>
+            <input formControlName="nombre" type="text" placeholder="Nombre Completo">
+            <div class="validaciones" *ngIf="formulario.controls['nombre'].invalid && (formulario.controls['nombre'].dirty || formulario.controls['nombre'].touched)">
+                <span>Porfavor complete el campo nombre correctamente</span>
+            </div>
+        </li>
+        <li>
+            <label>Telefono: </label>
+            <input formControlName="telefono" type="text" placeholder="Telefono" pattern="[0-9]{1,9}">
+            <div class="validaciones" *ngIf="formulario.controls['telefono'].invalid && (formulario.controls['telefono'].dirty || formulario.controls['telefono'].touched)">
+                <span>Porfavor complete el campo telefono correctamente</span>
+            </div>
+        </li>
+        <li>
+            <label>Correo Electronico: </label>
+            <input type="email" formControlName="correo"  placeholder="Correo">
+            <div class="validaciones" *ngIf="formulario.controls['correo'].invalid && (formulario.controls['correo'].dirty || formulario.controls['correo'].touched)">
+                <span>Porfavor complete el campo correo correctamente</span>
+            </div>
+        </li>
+        <li>
+            <label>Dirigido A: </label>
+            <select formControlName="dirigido" class="form-select" name="" id="">
+                <option value="Contenido">Contenido</option>
+                <option value="Publicidad">Publicidad</option>
+                <option value="Sugerencia">Sugerencia</option>
+                <option value="SuscripcionesDigitales">Suscripciones Digitales</option>
+            </select>
+        </li>
+        <li>
+            <label>Mensaje: </label>
+            <textarea formControlName="Mensaje" name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            <div class="validaciones" *ngIf="formulario.controls['Mensaje'].invalid && (formulario.controls['Mensaje'].dirty || formulario.controls['Mensaje'].touched)">
+                <span>Porfavor complete el campo correo correctamente</span>
+            </div>
+        </li>
+        <li>
+            <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid" [routerLink]="['/datosExitosos']" routerLinkActive="router-link-active" >Enviar Datos</button>
+        </li>
+    </ul>
+</form>

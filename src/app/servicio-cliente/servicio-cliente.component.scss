@@ -1,0 +1,35 @@
+form {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    width: 200px;
+    display: inline-block;
+    height: 20px;
+    text-align: right;
+}
+
+.validaciones {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+ul li input {
+    width: 180px;
+    height: 20px;
+}
+
+ul li select {
+    width: 180px;
+    height: 25px;
+}
+
+ul li textarea {
+    width: 180px;
+}
